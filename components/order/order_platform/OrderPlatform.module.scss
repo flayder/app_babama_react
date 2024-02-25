@@ -1,0 +1,30 @@
+@import "src/styles";
+
+.order__platform {
+  width: 100%;
+  background-color: $background;
+  border-radius: 12px;
+
+  @include media-lg {
+    width: 300px;
+  }
+
+  @include media-2xl {
+    width: 308px;
+  }
+
+  &__list {
+    display: none;
+
+    @include media-lg {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__select {
+    @include media-lg {
+      display: none;
+    }
+  }
+}

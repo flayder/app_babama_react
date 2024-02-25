@@ -1,0 +1,99 @@
+@import "src/styles";
+
+.header {
+  padding-top: 32px;
+  padding-bottom: 20px;
+
+  @include media-sm {
+    padding: 30px 0 35px;
+  }
+
+  @include media-xl {
+    padding: 43px 0 32px;
+  }
+
+  @include media-3xl {
+    padding-bottom: 36px;
+  }
+
+  &__container {
+    padding: 0 20px 23px;
+    border-bottom: 2px solid $gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-sm {
+      padding: 0 20px;
+      border-bottom: none;
+    }
+
+    @include media-lg {
+      padding: 0 30px;
+    }
+
+    @include media-2xl {
+      padding: 0 35px;
+    }
+  }
+
+  &__logo {
+    @include media-sm {
+      margin-right: 20px;
+      margin-bottom: 5px;
+    }
+
+    @include media-lg {
+      margin-bottom: 18px;
+    }
+
+    &._disabled {
+      pointer-events: none;
+    }
+
+    &_icon {
+      width: 128px;
+      height: 25px;
+
+      @include media-lg {
+        width: 239px;
+        height: 47px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 360px;
+    display: none;
+    color: $dark;
+
+    @include media-sm {
+      display: block;
+    }
+
+    @include media-lg {
+      max-width: 400px;
+    }
+
+    &_mobile {
+      max-width: 380px;
+      padding: 25px 20px 0;
+      text-align: left;
+      display: block;
+
+      @include media-sm {
+        display: none;
+      }
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    @include media-lg() {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

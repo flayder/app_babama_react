@@ -1,0 +1,64 @@
+@import "src/styles";
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+
+  &__overlay {
+    @include animated;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__wrapper {
+    @include animated;
+    position: relative;
+    border: 2px solid $gray;
+    margin: auto;
+    background-color: $background;
+    border-radius: 22px;
+    opacity: 1;
+  }
+
+  &__close {
+    @include animated;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    width: 42px;
+    height: 42px;
+    border: 1px solid $ico;
+    background-color: #fff;
+    border-radius: 50%;
+    color: $ico;
+
+    @include media-sm {
+      top: 24px;
+      right: 30px;
+    }
+
+    &__icon {
+      @include animated;
+      width: 20px;
+      height: 20px;
+      margin: auto;
+      fill: currentColor;
+    }
+
+    &:hover {
+      border-color: $black-text;
+      color: $black-text;
+    }
+  }
+}

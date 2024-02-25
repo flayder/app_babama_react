@@ -1,0 +1,29 @@
+@import "src/styles";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #f7f8fa;
+  border-radius: 12px;
+
+  @include media-md {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  @include media-xl {
+    padding: 22px 30px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    color: #969fb3;
+
+    @include media-md {
+      align-self: center;
+      margin-bottom: 0;
+    }
+  }
+}

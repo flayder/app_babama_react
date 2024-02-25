@@ -1,0 +1,152 @@
+.typography {
+  &,
+  &-heading,
+  &-display,
+  &-menu,
+  &-paragraph,
+  &-list {
+    &._regular {
+      font-weight: 400;
+    }
+
+    &._medium {
+      font-weight: 500;
+    }
+
+    &._bold {
+      font-weight: 700;
+    }
+  }
+
+  &-paragraph {
+    font-size: 14px;
+    line-height: 20px;
+    @include media-lg {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &._small {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &-list {
+    font-size: 14px;
+    line-height: 26px;
+    @include media-lg {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+
+  &-lead {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @include media-lg {
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+}
+
+h1 {
+  &.typography-heading {
+    font-size: 30px;
+    line-height: 40px;
+
+    @include media-lg {
+      font-size: 36px;
+      line-height: 50px;
+    }
+
+    &._medium {
+      font-size: 24px;
+
+      @include media-lg {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+h2 {
+  &.typography-heading {
+    font-size: 24px;
+    line-height: 32px;
+
+    @include media-lg {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    &._medium {
+      font-size: 18px;
+
+      @include media-lg {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+h3 {
+  &.typography-heading {
+    font-size: 22px;
+    line-height: 32px;
+
+    @include media-lg {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &._medium {
+      font-size: 18px;
+      line-height: 30px;
+
+      @include media-lg {
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+h4 {
+  &.typography-heading {
+    font-size: 20px;
+    line-height: 30px;
+
+    @include media-lg {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+}
+
+h5 {
+  &.typography-heading {
+    font-size: 18px;
+    line-height: 28px;
+
+    @include media-lg {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
+
+h6 {
+  &.typography-heading {
+    font-size: 16px;
+    line-height: 22px;
+
+    @include media-lg {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}

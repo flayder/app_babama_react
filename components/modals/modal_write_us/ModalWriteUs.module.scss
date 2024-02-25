@@ -1,0 +1,77 @@
+@import "src/styles";
+
+.modal {
+  width: 321px;
+
+  &__text {
+    line-height: 20px;
+  }
+
+  @include media-sm {
+    width: 456px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+
+    @include media-md {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    @include animated();
+    display: flex;
+    width: 100%;
+    min-height: 59px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $ico;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    &_disabled {
+      color: #c3cad9;
+      cursor: not-allowed;
+    }
+
+    &_active {
+      &:hover {
+        border-color: $text;
+        color: $black-text;
+      }
+
+      &:hover .modal_destination__icon {
+        fill: $black-text;
+      }
+    }
+
+    @include media-md {
+      width: 50%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include media-md {
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__icon {
+    @include animated();
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-left: -2px;
+    fill: $ico;
+  }
+}

@@ -1,0 +1,9 @@
+@import "src/styles";
+
+.modal {
+  width: 321px;
+
+  @include media-sm {
+    width: 456px;
+  }
+}

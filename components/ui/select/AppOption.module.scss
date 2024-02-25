@@ -1,0 +1,28 @@
+@import "src/styles";
+
+.option {
+  display: flex !important;
+  align-items: center;
+  padding: 10px 20px !important;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: transparent;
+  color: inherit !important;
+  z-index: 100 !important;
+  cursor: pointer !important;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.is_selected {
+  border-color: $ico !important;
+  background-color: $background-dark !important;
+}
+
+.is_focused {
+  border-color: $background-dark !important;
+  background-color: #f7f8fa !important;
+}
+

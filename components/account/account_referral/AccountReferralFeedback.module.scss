@@ -1,0 +1,53 @@
+@import "src/styles";
+
+
+.lk {
+  margin-top: -20px;
+}
+
+.feedback_wrap {
+  margin-top: 10px;
+  position: relative;
+  :global {
+    .feedback_header {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      border-radius: 50px;
+      justify-content: space-between;
+      background: $background;
+      padding: 10px 10px 10px 30px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .feedback_text {
+      height: 0;
+      font-size: 16px;
+      overflow: visible;
+      &.rah-static--height-zero {
+        overflow: hidden;
+      }
+      div {
+        padding: 25px;
+      }
+    }
+    .btn_plus {
+      border-radius: 50%;
+      border: 2px solid $dark-gray;
+      height: 45px;
+      width: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: $dark-gray;
+      font-weight: 300;
+      font-size: 30px;
+      svg {
+        use {
+          fill: $dark-gray;
+        }
+      }
+    }
+  }
+}

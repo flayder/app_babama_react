@@ -1,0 +1,75 @@
+@import "src/styles";
+
+.faq {
+  &._hidden {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #f7f8fa;
+    border-radius: 12px;
+
+    @include media-md {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+
+    @include media-xl {
+      padding: 22px 30px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      color: #969fb3;
+
+      @include media-md {
+        align-self: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__content {
+    padding-top: 30px;
+
+    &__heading {
+      padding-left: 15px;
+      color: $dark;
+
+      @include media-md {
+        padding-left: 20px;
+      }
+
+      @include media-xl {
+        padding-left: 30px;
+      }
+    }
+
+    &__text {
+      max-width: 800px;
+      padding-left: 15px;
+      margin-bottom: 30px;
+      color: #969fb3;
+
+      @include media-md {
+        padding-left: 20px;
+      }
+
+      @include media-xl {
+        padding-left: 30px;
+      }
+
+      &__extra {
+        display: none;
+
+        @include media-sm {
+          display: inline;
+        }
+      }
+    }
+  }
+}

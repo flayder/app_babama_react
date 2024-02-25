@@ -1,0 +1,11 @@
+.icon {
+  &_fill_current {
+    fill: currentColor !important;
+  }
+
+  &-inline {
+    height: 1em;
+    width: 1em;
+    line-height: 1;
+  }
+}

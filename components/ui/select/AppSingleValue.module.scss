@@ -1,0 +1,19 @@
+@import "src/styles";
+
+.single_value {
+  display: flex !important;
+  align-items: center;
+  color: $black-text !important;
+
+  @include media-lg {
+    font-size: 14px;
+  }
+
+  &_disabled {
+    color: $ico !important;
+  }
+}
+
+.icon {
+  margin-right: 10px;
+}

@@ -1,0 +1,193 @@
+@import "src/styles";
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  @include media-lg {
+    padding: 25px;
+    background-color: $white;
+    border-radius: 12px;
+  }
+
+  @include media-xl {
+    padding: 16px 18px;
+  }
+
+  @include media-2xl {
+    min-height: 110px;
+    padding: 20px 25px 20px 15px;
+  }
+
+  @include media-3xl {
+    margin-bottom: -10px;
+  }
+
+  &._hidden {
+    display: none;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 15px;
+
+    @include media-lg {
+      margin-right: 18px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    @include media-lg {
+      @include animated;
+      padding: 9px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+
+      &:hover {
+        border-color: $background-dark;
+        background-color: #f7f8fa;
+      }
+
+      &:hover .profile {
+        &__icon {
+          fill: $white;
+
+          &__background {
+            fill: $text;
+          }
+        }
+      }
+    }
+  }
+
+  &__devider {
+    width: 1px;
+    height: 30px;
+    background-color: $ico;
+    display: none;
+
+    @include media-lg {
+      display: block;
+    }
+  }
+
+  &__icon {
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    fill: $text;
+    position: relative;
+
+    @include media-lg {
+      @include animated;
+      width: 33px;
+      height: 33px;
+    }
+
+    &__wrapper {
+      display: flex;
+      width: 44px;
+      height: 44px;
+      position: relative;
+
+      @include media-sm {
+        width: 55px;
+        height: 55px;
+      }
+
+      @include media-lg {
+        width: 45px;
+        height: 45px;
+        margin-right: 20px;
+      }
+
+      @include media-3xl {
+        margin-right: 15px;
+      }
+    }
+
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      fill: $white;
+      stroke: $background-dark;
+      stroke-width: 1px;
+
+      @include media-lg {
+        @include animated;
+        fill: #f5f7fa;
+        stroke-width: 0;
+      }
+    }
+  }
+
+  &__balance {
+    color: $black-text;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__text {
+      display: none;
+
+      @include media-lg {
+        display: flex;
+        white-space: nowrap;
+      }
+    }
+
+    &__currency {
+      margin-left: 0.5em;
+    }
+
+    &__link {
+      display: none;
+      color: $dark-purple;
+
+      @include media-lg {
+        position: relative;
+        display: block;
+
+        &:before {
+          @include animated;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: transparent;
+          content: "";
+        }
+      }
+    }
+
+    &__icon {
+      &__wrapper {
+        @include media-lg {
+          display: none;
+        }
+      }
+    }
+
+    @include media-lg {
+      &:hover .profile__balance__link:before {
+        background-color: $dark-purple;
+      }
+    }
+  }
+
+  &__login {
+    &__text {
+      display: none;
+      padding: 3px 5px 0 0;
+
+      @include media-lg {
+        display: block;
+      }
+    }
+  }
+}

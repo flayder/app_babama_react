@@ -1,0 +1,13 @@
+@import "src/styles";
+
+.modal_registration {
+  width: 321px;
+
+  @include media-sm {
+    width: 456px;
+  }
+
+  &.modal_hidden {
+    display: none;
+  }
+}

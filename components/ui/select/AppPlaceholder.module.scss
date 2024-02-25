@@ -1,0 +1,9 @@
+@import "src/styles";
+
+.placeholder {
+  color: $black-text !important;
+
+  &_disabled {
+    color: $ico !important;
+  }
+}

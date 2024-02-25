@@ -1,0 +1,17 @@
+@import "src/styles";
+
+.wrapper {
+  padding: 5px;
+
+  @include media-sm {
+    padding: 20px 18px 18px;
+  }
+
+  @include media-xl {
+    padding: 30px 28px 28px;
+  }
+}
+
+.wrapper_without_padding {
+  padding: 0;
+}

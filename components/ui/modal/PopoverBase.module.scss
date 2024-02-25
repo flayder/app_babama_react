@@ -1,0 +1,30 @@
+.popover {
+  position: absolute;
+  border: 0.5px solid #f6f5f5;
+  background: #fff;
+  box-shadow:2px 3px 3px #d9d9d9;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  max-width: 293px;
+  color: #21293A;
+  padding: 20px;
+  margin-top: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: white;
+    right: 50%;
+    top: -5px;
+    transform: translateX(50%) rotate(45deg);
+    z-index: -1;
+  }
+}

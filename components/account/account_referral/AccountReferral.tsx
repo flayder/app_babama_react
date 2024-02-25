@@ -1,0 +1,25 @@
+import { AccountReferralFeedback } from '@/components/account/account_referral/AccountReferralFeedback';
+import { AccountReferralHeading } from '@/components/account/account_referral/AccountReferralHeading';
+import { LkLayout } from '@/components/layouts/lk_layout/LkLayout';
+import personal from '../Account.module.scss';
+import { AccountBanner } from './banner/AccountBanner';
+import { AccountTabs } from './tabs/AccountTabs';
+import { AccountReferralInfo } from './AccountReferralInfo';
+
+export function AccountReferral() {
+  return (
+    <>
+      <LkLayout>
+        <div className={personal.personal__content}>
+          <AccountBanner />
+          <AccountTabs />
+          <AccountReferralInfo />
+          <AccountReferralHeading />
+        </div>
+      </LkLayout>
+      <div className={personal.personal__content}>
+        <AccountReferralFeedback />
+      </div>
+    </>
+  );
+}

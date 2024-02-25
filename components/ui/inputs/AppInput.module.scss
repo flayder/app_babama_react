@@ -1,0 +1,118 @@
+@import "src/styles";
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 12px 19px;
+  border: 1px solid $dark-gray;
+  background-color: $white;
+  border-radius: 7px;
+  color: $black-text;
+
+  &__number {
+    width: 100%;
+    text-align: center;
+  }
+
+  &:disabled {
+    border: 1px solid $dark-gray;
+    background-color: $gray;
+    color: $ico;
+  }
+
+  &::placeholder {
+    color: $ico;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $text;
+    color: $black-text;
+  }
+
+  @include media-lg {
+    height: 44px;
+  }
+
+  &__button {
+    position: absolute;
+    right: 16px;
+    bottom: 9px;
+    width: 24px;
+
+    &:hover {
+      cursor: default;
+    }
+
+    &__icon {
+      &.icon-input-fail {
+        &._disabled path {
+          fill: #c3cad9;
+        }
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  &_left {
+    left: 0;
+    right: unset;
+  }
+}
+
+.icon_button {
+  margin-right: 10px;
+  color: $ico;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &_purple {
+    &:hover:not(:disabled) {
+      color: $purple !important;
+    }
+  }
+
+  &_left {
+    margin-left: 10px;
+    margin-right: unset;
+  }
+
+  &:hover:not(:disabled) {
+    color: $text;
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+.error {
+  position: absolute;
+  bottom: -16px;
+  left: 4px;
+
+  font-size: 12px;
+  line-height: 14px;
+  color: $black-text;
+}
+
+.post_input_disable {
+  color: $ico;
+}

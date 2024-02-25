@@ -1,0 +1,33 @@
+@import "src/styles";
+
+.order {
+  width: 100%;
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+
+  @include media-sm {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include media-lg {
+    flex-wrap: nowrap;
+  }
+
+  .order__activity ul li button
+  {
+    text-align: left;
+  }
+  .order__form .order_disabled
+  {
+    pointer-events: none;
+  }
+  @include media-sm {
+    padding: 0;
+  }
+
+  &.order_hidden {
+    display: none;
+  }
+}

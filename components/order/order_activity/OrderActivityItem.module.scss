@@ -1,0 +1,63 @@
+@import "src/styles";
+
+.order_activity {
+  &__item {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include animated;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 12px 19px;
+    border: 1px solid $dark-gray;
+    background-color: $white;
+    border-radius: 7px;
+    color: $text;
+    transition-duration: $default-transition-duration;
+    transition-property: background, background-color;
+    transition-timing-function: $default-transition-function;
+    --icon-bg: #6b7a99;
+    --icon-fill: #fff;
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+
+    &.activity_active {
+      border-color: transparent;
+      background: $gradient;
+      color: $white;
+      --icon-bg: #fff;
+      --icon-fill: #8833ff;
+    }
+
+    &.activity_disabled {
+      background-color: $gray;
+      color: $ico;
+      pointer-events: none;
+      user-select: none;
+      --icon-bg: #dbe1ee;
+      --icon-fill: #c3cad9;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-right: 14px;
+    fill: currentColor;
+    transition-duration: $default-transition-duration;
+    transition-property: width, height, margin-bottom, fill;
+    transition-timing-function: $default-transition-function;
+    will-change: width, height;
+    filter: invert(50%) sepia(10%) saturate(1103%) hue-rotate(182deg) brightness(93%) contrast(84%);
+  }
+}

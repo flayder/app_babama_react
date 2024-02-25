@@ -1,0 +1,132 @@
+@import "src/styles/reset";
+@import "src/styles";
+
+.transition-active {
+  transition: color $default-transition-duration $default-transition-function,
+  background $default-transition-duration $default-transition-function,
+  border-color $default-transition-duration $default-transition-function,
+  opacity $default-transition-duration $default-transition-function;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.transition-hover {
+  transition: none;
+}
+
+body {
+  @include font-family-sans;
+  position: relative;
+  background-color: $background;
+  color: $text;
+
+  @include media-lg {
+    &::before {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 812px;
+      background: linear-gradient(180.35deg, #eef1f7 0.31%, $background 85.73%);
+      content: "";
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: #{$container-width + $offset-side * 2};
+  padding-right: $offset-side-min;
+  padding-left: $offset-side-min;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media-xs {
+    padding-right: $offset-side-xs;
+    padding-left: $offset-side-xs;
+  }
+
+  @include media-lg {
+    padding-right: $offset-side-lg;
+    padding-left: $offset-side-lg;
+  }
+
+  @include media-2xl {
+    padding-right: $offset-side;
+    padding-left: $offset-side;
+  }
+
+  &._as-xs {
+    padding-right: $offset-side-xs;
+    padding-left: $offset-side-xs;
+
+    @include media-xs {
+      padding-right: $offset-side-xs;
+      padding-left: $offset-side-xs;
+    }
+
+    @include media-lg {
+      padding-right: $offset-side-lg;
+      padding-left: $offset-side-lg;
+    }
+
+    @include media-2xl {
+      padding-right: $offset-side;
+      padding-left: $offset-side;
+    }
+  }
+}
+
+._no-scroll {
+  overflow: hidden;
+}
+
+.page-home {
+  position: relative;
+  padding-bottom: 25px;
+
+  @include media-lg {
+    padding-bottom: 80px;
+  }
+
+  @include media-xl {
+    padding-bottom: 68px;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 755px;
+    background: linear-gradient(0.35deg, #eef1f7 0.31%, rgba(#f9fafc, 0.25) 85.73%);
+    content: "";
+  }
+}
+
+.base-layout {
+  border: 1px solid $gray;
+  background-color: $white;
+  border-radius: 22px;
+  margin-bottom: 68px;
+  //overflow: hidden;
+}
+
+.modal-content {
+  padding: 20px 18px 18px;
+
+  @include media-sm {
+    padding: 20px 28px 28px;
+  }
+}

@@ -1,0 +1,20 @@
+@import "src/styles";
+
+.history {
+  padding: 20px 8px 18px;
+  border-top: none;
+  background-color: $white;
+  border-radius: 0 0 22px 22px;
+
+  @include media-sm {
+    padding: 20px 18px 18px;
+  }
+
+  @include media-xl {
+    padding: 30px 28px 28px;
+  }
+
+  &._transactions {
+    border: none;
+  }
+}

@@ -1,0 +1,141 @@
+@import "src/styles";
+
+.order__platform {
+  &__item {
+    position: relative;
+    min-height: 86px;
+    flex-basis: 50%;
+    border: 2px solid $gray;
+    background-color: $background;
+    color: $text;
+    transition-duration: $default-transition-duration;
+    transition-property: left, right, top, bottom, background, z-index, border-radius;
+    transition-timing-function: $default-transition-function;
+
+    &:nth-child(2n + 1) {
+      border-right-width: 1px;
+    }
+
+    &:nth-child(2n + 2) {
+      border-left-width: 1px;
+    }
+
+    &:nth-child(n + 3):not(:nth-last-child(-n + 2)) {
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    &:nth-child(1) {
+      border-bottom-width: 1px;
+      border-top-left-radius: 12px;
+    }
+
+    &:nth-child(2) {
+      border-bottom-width: 1px;
+      border-top-right-radius: 12px;
+    }
+
+    &:nth-last-child(1) {
+      border-top-width: 1px;
+      border-bottom-right-radius: 12px;
+    }
+
+    &:nth-last-child(2) {
+      border-top-width: 1px;
+      border-bottom-left-radius: 12px;
+    }
+
+    &:nth-child(1) .order__platform__button {
+      border-top-left-radius: 12px;
+    }
+
+    &:nth-child(2) .order__platform__button {
+      border-top-right-radius: 12px;
+    }
+
+    &:nth-last-child(1) .order__platform__button {
+      border-bottom-right-radius: 12px;
+    }
+
+    &:nth-last-child(2) .order__platform__button {
+      border-bottom-left-radius: 12px;
+    }
+
+    &.platform_active {
+      z-index: 2;
+      border: none;
+      background: $gradient;
+      box-shadow: 0 3px 30px rgba(136, 51, 255, 0.3);
+      color: $white;
+    }
+
+    &.platform_disabled {
+      background-color: $dark-gray;
+      color: $ico;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &:hover {
+      z-index: 3;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-bottom: 15px;
+    fill: currentColor;
+    transition-duration: $default-transition-duration;
+    transition-property: width, height, margin-bottom;
+    transition-timing-function: $default-transition-function;
+    will-change: width, height;
+  }
+
+  &__button {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: $background;
+    border-radius: 0;
+    transition-duration: $default-transition-duration;
+    transition-property: left, right, top, bottom, background, z-index, border-radius;
+    transition-timing-function: $default-transition-function;
+
+    &:hover {
+      z-index: 4;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+      background: $white;
+      border-radius: 12px;
+      box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+      .order__platform {
+        &__icon {
+          width: 30px;
+          height: 30px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &.platform_active {
+      background: $gradient;
+
+      &:hover {
+        background: $gradient;
+      }
+    }
+  }
+}

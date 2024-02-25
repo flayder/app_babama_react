@@ -1,0 +1,156 @@
+@import "src/styles";
+
+.faq_item {
+  @include animated;
+  padding: 9px 12px 9px 15px;
+  background-color: #f7f8fa;
+  border-radius: 30px;
+
+  @include media-md {
+    padding: 11px 12px 11px 20px;
+  }
+
+  @include media-xl {
+    padding: 9px 12px 9px 30px;
+  }
+
+  &.faq_active {
+    padding: 9px 12px 15px 15px;
+    background-color: $background-dark;
+
+    @include media-md {
+      padding: 9px 12px 15px 20px;
+    }
+
+    @include media-xl {
+      padding: 11px 12px 20px 30px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+
+    @include media-xl {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start;
+
+    &:hover .faq_item__icon {
+      border-color: $text;
+
+      &::before,
+      &::after {
+        background-color: $black-text;
+      }
+    }
+  }
+
+  &.faq_active &__button {
+    margin-bottom: 9px;
+  }
+
+  &__title {
+    @include animated;
+    margin-right: 10px;
+    font-size: 13px;
+    line-height: 14px;
+
+    @include media-md {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include media-xl {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &._active &__title {
+    color: $dark;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include media-md {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include media-xl {
+      line-height: 26px;
+    }
+  }
+
+  &__icon {
+    @include animated;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    @include media-xl {
+      border-color: $ico;
+      background-color: $white;
+    }
+
+    &::before,
+    &::after {
+      @include animated;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 13px;
+      height: 2px;
+      background-color: $ico;
+      border-radius: 2px;
+      content: "";
+      transform: translate(-50%, -50%);
+
+      @include media-xl {
+        width: 16px;
+      }
+    }
+
+    &::after {
+      @include animated;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: none;
+    padding-left: 20px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -1px;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, #8833ff 0%, #5703cc 100%);
+      border-radius: 2px;
+      content: "";
+    }
+  }
+
+  &.faq_active &__icon {
+    &::after {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+
+  &.faq_active &__content {
+    display: block;
+  }
+}

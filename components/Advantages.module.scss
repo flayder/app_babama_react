@@ -1,0 +1,103 @@
+@import "src/styles";
+
+.advantages {
+   &._hidden {
+    display: none;
+  }
+
+  &__container {
+    padding: 0 30px;
+
+    @include media-sm {
+      padding: 0 20px;
+    }
+
+    @include media-lg {
+      padding: 0 30px;
+    }
+
+    @include media-2xl {
+      padding: 0 35px;
+    }
+  }
+
+  &__title {
+    color: $black;
+    font-size: 24px;
+    line-height: 40px;
+
+    @include media-sm {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    @include media-lg {
+      font-size: 36px;
+      line-height: 50px;
+    }
+
+    &-span {
+      display: inline;
+      @include media-sm {
+        display: none;
+      }
+
+      &_sm {
+        display: none;
+        @include media-sm {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    max-width: 320px;
+    color: #969fb3;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include media-sm {
+      max-width: none;
+    }
+  }
+
+  &__list {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 30px;
+
+    @include media-sm {
+      column-gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      row-gap: 0;
+    }
+  }
+}
+
+.advantages-item {
+  &__image {
+    display: none;
+    width: 55px;
+    margin-bottom: 10px;
+
+    @include media-sm {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include media-sm {
+      max-width: 160px;
+    }
+
+    @include media-lg {
+      max-width: none;
+    }
+  }
+}

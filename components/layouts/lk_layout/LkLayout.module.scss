@@ -1,0 +1,13 @@
+@import "src/styles";
+
+.wrapper {
+  padding: 20px;
+
+  //@include media-sm {
+  //  padding: 10px;
+  //}
+  ////
+  //@include media-xl {
+  //  padding: 5px;
+  //}
+}

@@ -1,0 +1,40 @@
+@import "src/styles";
+
+@keyframes swipe-animation {
+  0% {
+    transform: rotate3d(1, 1, 1, -45deg);
+  }
+  25% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 45deg);
+  }
+  75% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, -45deg);
+  }
+}
+
+.scroll {
+  position: relative;
+  width: 100%;
+}
+
+.swipe {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -15px;
+  z-index: 2;
+  animation: swipe-animation 2s linear infinite;
+}
+
+@media (max-width: 770px) {
+  .swipe {
+    display: block;
+  }
+}

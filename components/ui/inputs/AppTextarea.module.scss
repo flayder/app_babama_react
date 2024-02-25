@@ -1,0 +1,44 @@
+@import "src/styles";
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 80px;
+  padding: 12px 19px;
+  border: 1px solid $dark-gray;
+  background-color: $white;
+  border-radius: 7px;
+
+  &:hover {
+    border-color: $text;
+    color: $black-text;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 20px;
+
+
+    &::after {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.1669 15.4336V19.1669H15.4336L19.1669 15.4336Z' fill='%23C3CAD9'/%3E%3Cpath d='M19.1663 9.6001V12.9001L12.8996 19.1668H9.59961L19.1663 9.6001Z' fill='%23C3CAD9'/%3E%3Cpath d='M19.1656 3.7666V7.06661L7.06562 19.1666H3.76562L19.1656 3.7666Z' fill='%23C3CAD9'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+    }
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: -15px;
+  left: 4px;
+
+  font-size: 12px;
+  line-height: 14px;
+  color: $black-text;
+}

@@ -1,0 +1,25 @@
+@import "src/styles";
+
+.dark {
+  background: $dark;
+  color: #fff;
+}
+
+.text {
+  :global {
+    ol {
+      counter-reset: counter;
+      li {
+        position: relative;
+        padding-left: 15px;
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          counter-increment: counter;
+          content: counter(counter) ". ";
+        }
+      }
+    }
+  }
+}

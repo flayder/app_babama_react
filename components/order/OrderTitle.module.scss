@@ -1,0 +1,21 @@
+@import "src/styles";
+
+.title {
+  margin-bottom: 6px;
+  color: $dark;
+  font-weight: 500;
+
+  @include media-lg {
+    margin-bottom: 10px;
+  }
+}
+
+.description {
+  margin-bottom: 20px;
+  color: $dark;
+  max-width: 792px;
+
+  @include media-lg {
+    margin-bottom: 35px;
+  }
+}

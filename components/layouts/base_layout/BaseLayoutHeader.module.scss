@@ -1,0 +1,182 @@
+@import 'src/styles';
+
+.layout {
+  display: flex;
+  min-height: 90px;
+  align-items: stretch;
+  padding: 0 15px;
+  border-bottom: 2px solid $gray;
+  background-color: $background;
+  border-radius: 12px 12px 0 0;
+
+  @include media-2xs {
+    padding: 0 23px;
+  }
+
+  @include media-sm {
+    padding: 0 18px;
+  }
+
+  @include media-lg {
+    padding: 0 30px;
+  }
+
+  &._hidden {
+    display: none;
+  }
+
+  &__tabs {
+    display: flex;
+    margin-right: auto;
+  }
+
+  &__tab {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    margin-bottom: -2px;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+
+      @include media-2xs {
+        margin-right: 18px;
+      }
+
+      @include media-sm {
+        margin-right: 20px;
+      }
+
+      @include media-lg {
+        margin-right: 40px;
+      }
+    }
+
+    &::before {
+      @include animated;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $purple;
+      content: "";
+      transform: translateX(-101%);
+    }
+
+    &.tab_active {
+      color: $purple;
+
+      &::before {
+        transform: translateX(0) !important;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        transform: translateX(101%);
+      }
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      margin-right: 10px;
+      fill: $text;
+    }
+
+    &.tab_active &__icon {
+      fill: $purple;
+    }
+
+    &__title {
+      padding: 0 5px 0 0;
+
+      @include media-lg {
+        padding: 3px 5px 0 0;
+      }
+
+      &-md {
+        display: none;
+
+        @include media-sm {
+          display: inline;
+        }
+      }
+    }
+
+    &.tab_active &__title {
+      color: $purple;
+    }
+
+    &.tab_active {
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    @include animated;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 6px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    @include media-sm {
+      padding: 10px 23px 10px 17px;
+    }
+
+    @include media-lg {
+      padding: 12px 20px 12px 15px;
+    }
+
+    &__text {
+      display: none;
+
+      @include media-sm {
+        display: block;
+      }
+    }
+
+    &__icon {
+      @include animated;
+      width: 20px;
+      height: 20px;
+      fill: $ico;
+
+      @include media-sm {
+        margin-right: 10px;
+      }
+
+      @include media-lg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+
+    &:hover &__icon {
+      fill: $black-text;
+    }
+
+    &.tab_active {
+      display: none;
+    }
+  }
+}
+

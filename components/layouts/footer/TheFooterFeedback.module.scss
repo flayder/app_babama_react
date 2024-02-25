@@ -1,0 +1,150 @@
+@import "src/styles";
+
+.feedback {
+  grid-area: group-3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include media-lg {
+    padding: 20px;
+    margin: -20px auto;
+    background-color: $background-dark;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include media-xl {
+    padding: 30px 40px 20px;
+    margin: -20px auto;
+  }
+
+  @include media-2xl {
+    padding: 35px 80px 30px;
+  }
+
+  @include media-3xl {
+    margin: -25px auto;
+  }
+
+  &__subtitle {
+    @include media-lg {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include media-lg {
+      align-items: center;
+    }
+  }
+
+  &__email {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 30px;
+
+    @include media-sm {
+      margin-bottom: 24px;
+    }
+
+    @include media-lg {
+      margin-bottom: 15px;
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    @include media-xl {
+      margin-bottom: 20px;
+    }
+
+    @include media-2xl {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 22px 10px 17px;
+    margin-bottom: 10px;
+    background-color: $dark-purple;
+    border-radius: 46px;
+    box-shadow: 0 3px 30px rgba(136, 51, 255, 0.3);
+    color: $white;
+
+    @include media-lg {
+      padding: 13px 22px 13px 17px;
+    }
+
+    @include media-2xl {
+      padding: 14px 27px 14px 22px;
+    }
+
+    &::before {
+      @include animated;
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      border: 3px solid transparent;
+      border-radius: 58px;
+      content: "";
+    }
+
+    &:hover {
+      &::before {
+        border-color: $purple;
+      }
+    }
+  }
+
+  &__link {
+    @include animated;
+    display: flex;
+    align-items: center;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 48px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+    color: $text;
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+  }
+
+  &__item {
+    width: 250px;
+    min-height: 44px;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 14px;
+
+    @include media-lg {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include media-2xl {
+      width: 274px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: currentColor;
+  }
+}

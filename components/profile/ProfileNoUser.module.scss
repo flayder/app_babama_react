@@ -1,0 +1,44 @@
+@import "src/styles";
+
+.profile_no_user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: $white;
+  border-radius: 12px;
+
+  &._hidden {
+    display: none;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+
+    @include media-lg {
+      padding: 10px 22px 10px 17px;
+    }
+
+    &:hover .profile_no_user__icon {
+      fill: $text;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: $ico;
+  }
+
+  &__text {
+    display: none;
+    margin-left: 10px;
+    color: $text;
+
+    @include media-lg {
+      display: block;
+    }
+  }
+}

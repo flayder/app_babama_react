@@ -1,0 +1,338 @@
+@import "src/styles";
+
+.services {
+  &__list {
+    @include media-sm {
+      display: grid;
+      column-gap: 20px;
+      grid-auto-rows: auto;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-lg {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include media-3xl {
+      display: grid;
+    }
+
+    &_extra {
+      @include media-xl {
+        display: grid;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 20px;
+
+    @include media-sm {
+      grid-column: span 2;
+    }
+
+    &_medium {
+      @include media-sm {
+        grid-column: span 1;
+      }
+    }
+
+    &_small {
+      @include media-sm {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  &__extra {
+    @include media-sm {
+      margin-top: 10px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      color: $black;
+
+      &_disabled {
+        color: $ico;
+      }
+    }
+  }
+}
+
+.input {
+  margin: 0;
+}
+
+.summary {
+  padding-top: 10px;
+
+  &_disabled {
+    color: $ico;
+  }
+
+  @include media-sm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include media-xl {
+    align-items: flex-start;
+  }
+
+  &__subheading {
+    @include media-sm {
+      flex-basis: 100%;
+    }
+  }
+
+  &__count {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: -2px;
+    color: $black;
+    font-size: 24px;
+    line-height: 30px;
+
+    @include media-xl {
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    &__number {
+      margin-right: 0.2em;
+      font-size: 28px;
+      line-height: 35px;
+
+      &_disabled {
+        color: $ico;
+      }
+
+      @include media-xl {
+        font-size: 38px;
+        line-height: 70px;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__promo {
+    color: $dark-purple;
+    display: flex;
+    align-items: center;
+
+    @include media-sm {
+      padding: 16px 14px;
+    }
+
+    @include media-xl {
+      padding: 16px 18px;
+    }
+
+    @include media-3xl {
+      padding: 13px;
+    }
+
+    &__input {
+      display: none;
+    }
+
+    &__activated {
+      display: none;
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    &:disabled {
+      color: #c3cad9 !important;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &._activated &-default {
+      display: none;
+    }
+
+    &._activated &-activated {
+      display: flex;
+      align-items: center;
+    }
+
+    &._question__hover {
+      position: absolute;
+      margin-left: -70px;
+      z-index: 999;
+      font-size: 13px;
+      box-sizing: border-box;
+
+      width: 327px;
+
+      border: 0.5px solid #f6f5f5;
+      background: #fff;
+      box-shadow: 2px 3px 3px #d9d9d9;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &._question__hover::after {
+      content: '';
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      background: white;
+      right: 153px;
+      top: 1%;
+      transform: translate(0, -50%) rotate(45deg);
+    }
+
+    &._question__hover_content {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 19px;
+
+      max-width: 293px;
+
+      color: #21293A;
+      padding: 20px 5px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      &._question__hover {
+        top: 650px;
+        margin-left: -120px;
+      }
+    }
+    @media screen and (max-width: 405px) {
+      &._question__hover {
+        top: 980px;
+        margin-left: -5px;
+        width: 310px;
+      }
+      &._question__hover::after {
+        right: 129px;
+      }
+    }
+  }
+
+  &__submit {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 49px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    background: $gradient;
+    border-radius: 8px;
+    box-shadow: 0 3px 30px rgba(136, 51, 255, 0.3);
+    color: $white;
+    user-select: none;
+
+    &__disabled {
+      background: #ECEDF2;
+      border: 1px solid #DBE1EE;
+      box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+      border-radius: 8px;
+    }
+
+    @include media-sm {
+      margin-top: 6px;
+    }
+
+    @include media-xl {
+      min-height: 56px;
+    }
+
+    @include media-3xl {
+      margin-top: 8px;
+    }
+
+    &__text {
+      padding: 0 5px 0 0;
+    }
+
+    &::before {
+      @include animated;
+      position: absolute;
+      z-index: 1;
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
+      border: 4px solid transparent;
+      border-radius: 10px;
+      content: "";
+    }
+
+    &:hover {
+      &::before {
+        border-color: $purple;
+      }
+    }
+
+    &:disabled {
+      border: 1px solid #dbe1ee;
+      background: #ecedf2;
+      box-shadow: 0 0 50px rgb(115 124 147 / 4%);
+      color: #c3cad9;
+      cursor: default;
+
+      &:hover {
+        &::before {
+          border-color: transparent;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    --fill: $purple;
+    margin-right: 10px;
+
+    @include media-lg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.label_login {
+  color: $purple;
+
+  &_disable {
+    cursor: default;
+    color: $ico;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  fill: $text;
+
+  &_disabled {
+    fill: $ico;
+  }
+}
+
+.service_label {
+  display: flex;
+  align-items: center;
+}

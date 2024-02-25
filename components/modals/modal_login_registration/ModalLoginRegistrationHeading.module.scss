@@ -1,0 +1,108 @@
+@import "src/styles";
+
+.modal_registration {
+  &__heading {
+    display: flex;
+    min-height: 80px;
+    padding: 0 18px;
+    border-bottom: 2px solid $gray;
+
+    @include media-sm {
+      min-height: 90px;
+      padding: 0 28px;
+    }
+  }
+
+  &__tab {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    margin-bottom: -2px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include media-2xs {
+        margin-right: 18px;
+      }
+
+      @include media-sm {
+        margin-right: 20px;
+      }
+
+      @include media-lg {
+        margin-right: 40px;
+      }
+    }
+
+    &::before {
+      @include animated;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $purple;
+      content: "";
+      transform: translateX(-101%);
+    }
+
+    &.tab_active {
+      color: $purple;
+
+      &::before {
+        transform: translateX(0) !important;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        transform: translateX(101%);
+      }
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      margin-right: 10px;
+      fill: $text;
+    }
+
+    &.tab_active &__icon {
+      fill: $purple;
+    }
+
+    &__title {
+      padding: 0 5px 0 0;
+
+      @include media-lg {
+        padding: 3px 5px 0 0;
+      }
+
+      &-md {
+        display: none;
+
+        @include media-sm {
+          display: inline;
+        }
+      }
+    }
+
+    &.tab_active &__title {
+      color: $purple;
+    }
+
+    &.tab_active {
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__remember_title {
+    display: flex;
+    align-items: center;
+  }
+}

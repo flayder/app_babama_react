@@ -1,0 +1,20 @@
+@import "src/styles";
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 22px;
+  position: relative;
+  margin-bottom: 6px;
+  color: $black-text;
+
+  &_disabled {
+    color: $ico;
+  }
+}
+
+.post_label {
+
+}

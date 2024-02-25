@@ -1,0 +1,300 @@
+@import "src/styles";
+
+.button {
+  @include button-reset;
+  flex-shrink: 0;
+  user-select: none;
+
+  &__details {
+    @include animated;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    @include media-xl {
+      width: 42px;
+      height: 42px;
+    }
+
+    &__dots {
+      @include animated;
+      position: relative;
+      width: 4px;
+      height: 4px;
+      margin: auto;
+      background-color: $ico;
+      border-radius: 50%;
+      transform: scale(0.65);
+
+      @include media-xl {
+        transform: scale(1);
+      }
+
+      &::before,
+      &::after {
+        @include animated;
+        position: absolute;
+        top: 0;
+        width: 4px;
+        height: 4px;
+        background-color: $ico;
+        border-radius: 50%;
+        content: "";
+      }
+
+      &::before {
+        left: -7px;
+      }
+
+      &::after {
+        right: -7px;
+      }
+    }
+
+    &:hover {
+      border-color: $text;
+    }
+
+    &:hover &__dots {
+      background-color: $black-text;
+
+      &::before,
+      &::after {
+        background-color: $black-text;
+      }
+    }
+  }
+
+  &__repeat {
+    @include animated;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 21px 9px 16px;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 46px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    @include media-xl {
+      padding: 11px 26px 11px 21px;
+    }
+
+    &:first-child {
+      flex-grow: 1;
+    }
+
+    &:not(:first-child) {
+      padding: 9px;
+      border-radius: 50%;
+
+      @include media-xl {
+        padding: 11px;
+      }
+    }
+
+    &__icon {
+      @include animated;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      fill: $ico;
+
+      @include media-xl {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:not(:first-child) &__text {
+      display: none;
+    }
+
+    &:not(:first-child) &__icon {
+      margin: auto;
+    }
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+
+    &:hover &__icon {
+      fill: $black-text;
+    }
+  }
+
+  &__pay {
+    position: relative;
+    flex-grow: 1;
+    padding: 13px 17px;
+    background: $gradient;
+    border-radius: 46px;
+    box-shadow: 0 4px 10px rgba(136, 51, 255, 0.3);
+    color: #fff;
+
+    &::before {
+      @include animated;
+      position: absolute;
+      z-index: 1;
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
+      border: 3px solid transparent;
+      border-radius: 46px;
+      content: "";
+    }
+
+    @include media-xl {
+      flex-grow: initial;
+      padding: 17px 24px;
+    }
+
+    &:hover {
+      &::before {
+        border-color: $purple;
+      }
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px 13px 15px;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    @include media-md {
+      padding: 13px 22px 13px 17px;
+    }
+
+    @include media-xl {
+      padding: 16px 27px 16px 22px;
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      fill: $ico;
+
+      @include media-xl {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+
+    &:hover &__icon {
+      fill: $black-text;
+    }
+  }
+
+  &__new_question {
+    @include animated;
+    display: flex;
+    width: 100%;
+    height: 51px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+    font-size: 14px;
+    line-height: 20px;
+
+    @include media-sm {
+      width: 228px;
+      margin: auto;
+    }
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+  }
+
+  &__personal_wallet {
+    position: relative;
+    display: flex;
+    height: 49px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    background: $gradient;
+    border-radius: 6px;
+    color: $white;
+
+    @include media-sm {
+      height: 40px;
+    }
+
+    @include media-lg {
+      height: 44px;
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      fill: currentColor;
+
+      @include media-lg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &::before {
+      @include animated;
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      border: 3px solid transparent;
+      border-radius: 8px;
+      content: "";
+    }
+
+    &:hover {
+      &::before {
+        border-color: $purple;
+      }
+    }
+  }
+
+  &__personal_settings {
+    height: 36px;
+    padding: 10px 16px;
+    border: 1px solid $ico;
+    background-color: $white;
+    border-radius: 6px;
+    box-shadow: 0 0 50px rgba(115, 124, 147, 0.04);
+
+    &:hover {
+      border-color: $text;
+      color: $black-text;
+    }
+
+    &:disabled {
+      border-color: $dark-gray;
+      background-color: $gray;
+      pointer-events: none;
+    }
+  }
+}
